@@ -85,7 +85,7 @@ public class WordReader {
 		int closedBrace = 0;
 		
 		while(in.hasNextLine()) {
-			CharArray c = in.nextLine().toCharArray();
+			char[] c = in.nextLine().toCharArray();
 			for (char c : s) {
 				if (c== '{') {
 					openBrace++;
