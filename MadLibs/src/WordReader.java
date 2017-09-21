@@ -82,7 +82,7 @@ public class WordReader {
 	public static void part2(){
 		canBeOpened(args[1], 2);
 		Scanner p2 = openFile(args[1], 2);
-		if compareFiles(){
+		if (compareFiles()){
 			output.println("Files Identical\n");
 		}
 		else{
