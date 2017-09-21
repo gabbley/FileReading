@@ -16,7 +16,7 @@ public class WordReader {
 		return input;
 	}
 
-	public static PrintWriter outputMessages(String filename, int part) {
+	public static PrintWriter canBeOpened(String filename, int part) {
 
 		File f = new File(filename);
 		PrintWriter output = null;
@@ -30,9 +30,6 @@ public class WordReader {
 		return output;
 	}
 
-	public static boolean canBeOpened() {
-
-	}
 
 	/*
 	 * public static void writeJava(Scanner input, PrintWriter output) { while
@@ -59,25 +56,47 @@ public class WordReader {
 			System.exit(1);
 		}
 
-		Scanner in = openWords(args[0]);
+		Scanner in = openFile(args[0]);
 		if (in == null)
 			System.exit(1);
 
 		PrintWriter out = openDictionary(args[1]);
 
-		if (checkBraces()) {
-			output.println("Braces Balanced\n");
-		} else {
-			output.println("Brances Not Balanced\n");
-		}
-		
+		part1();
+		part2();
 		
 
 	}
 
 	public static void part1() {
+		canBeOpened(args[0], 1);
 		Scanner p1 = openFile(args[0], 1);
-		checkBraces(p1);
+		if (checkBraces(p1)) {
+			output.println("Braces Balanced\n");
+		} else {
+			output.println("Braces Not Balanced\n");
+		}
+		
+	}
+	
+	public static void part2(){
+		canBeOpened(args[1], 2);
+		Scanner p2 = openFile(args[1], 2);
+		if compareFiles(){
+			output.println("Files Identical\n");
+		}
+		else{
+			output.println("Files Not Identical\n");
+		}
+	}
+	
+	public static void part3(){
+		
+	}
+	
+	public static boolean compareFiles(){
+		
+		
 	}
 
 	public static boolean checkBraces(Scanner in) {
